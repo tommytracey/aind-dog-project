@@ -19,7 +19,7 @@ This project is inspired by the [Kaggle Dog Breed competition](https://www.kaggl
 
 Here are two sample outputs from the final algorithm:
 
-<img src="writeup/german-shepherd-solo.png" width="40%" align="top" alt=""  title="Sample Output" /><img src="writeup/jim-carey.png" width="45%" align="top" alt="" title="Sample Output" />
+<img src="writeup/german-shepherd-solo.png" width="41%" align="top-left" alt=""  title="Sample Output" /><img src="writeup/jim-carey.png" width="45%" align="right" alt="" title="Sample Output" />
 
 #### Learning Goals
 
