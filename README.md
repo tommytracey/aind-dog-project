@@ -24,20 +24,59 @@ Here are two sample outputs from the final algorithm:
 #### Learning Goals
 
 - Explore top performing CNN models for classification, including **VGG, ResNet, InceptionV3, and Xception** network architectures.
-- Implement a subset of these models using **transfer learning**.
-- First implement a pipeline using **Keras+Tensorflow**. Then, as an extra learning challenge, implement a different pipeline in **PyTorch**.
-- Understand the challenges involved in piecing together a series of models designed to perform various tasks in a data processing pipeline.  Each model has its strengths and weaknesses, and engineering a real-world application often involves solving many problems without a perfect answer. Although the solution isn't perfect, it nonetheless creates a fun user experience!
-
-
+	- And use using **transfer learning** to implement a subset of these architectures.
+- First implement a pipeline using **Keras+Tensorflow**. Then, as an extra learning challenge, implement a different pipeline in **PyTorch**. (Note that these were done in separate iPython notebooks.)
+- Understand the challenges involved in piecing together a series of models designed to perform various tasks in a data processing pipeline.  Each model has its strengths and weaknesses, and engineering a real-world application often involves solving many problems without a perfect answer. The solution developed in this project will be far from perfect, but it should create a fun user experience!
 
 ##### &nbsp;
 ## Approach
-*coming soon*
+Outlined below is a summary of the steps and challenges encountered during this project. However, a more detailed walk-through along with the source code is available via the iPython notebooks.
+
+[//]: # (TODO - create html version for Keras)
+- Keras+Tensorflow &mdash; [.ipynb version](dog_app_v6_keras.ipynb), [.html version](https://rawgit.com/tommytracey/aind-dog-project/master/dog_app_v6_keras.html)
+- PyTorch &mdash; [.ipynb version](dog_app_v7_pytorch.ipynb), [.html version](https://rawgit.com/tommytracey/aind-dog-project/master/dog_app_v7_pytorch.html)
+
+### Steps:
+1. Data Pre-processing
+	- Load and Inspect Data
+	- Create Train, Validation, and Test Sets
+	- Augmentation
+1. Build CNN for recognizing dog breeds
+	- Transfer learning: Load pre-trained model and replace last fully connected layer.
+	- Setup Optimization, Regularization, and Loss Functions
+	- Re-train model
+	- Examine results
+		- train, valid, test accuracy
+		- Preview model predictions
+	- Inference
+		- Take a deeper look at model predictions including confidence scores
+1. Incorporate human face detector
+1. Integrate into single algorithm
 
 
 ##### &nbsp;
 ## Results
 *coming soon*
+
+
+##### &nbsp;
+## Reflections
+#### Improving Accuracy
+- Train longer
+- Additional training on poor performing breeds
+- Deeper architecture + Augmentation
+
+#### PyTorch vs. Keras+Tensorflow
+
+1. PyTorch dataloader
+	- makes creation of class labels seamless
+	- no need for One-hot Encoding
+	- creating augmentations is a snap!
+1. PyTorch strikes a good balance between simplicity and flexibility. PyTorch also feels more like pure Python, whereas Tensorflow has some syntax and conventions that are unique to Tensorflow. "Sessions" anyone? In general, Tensorflow feels more lower level and getting the syntax right can be cumbersome. However, using Keras helps abstract away much of that complexity.
+1. Tensorflow seems much more efficient and production ready.
+	- Static vs. dynamic graph computation
+	- AWS cost differential
+	- Support community
 
 
 
@@ -55,9 +94,9 @@ NOTE: These instructions have been modified for running the project on AWS, with
 
 1. Create an Amazon Web Services EC2 instance. I recommend [Deep Learning AMI (Ubuntu) Version 10.0 - ami-e580c79d](https://aws.amazon.com/marketplace/pp/B077GCH38C), which comes with most of the packages you'll need already pre-installed.
 
-	• Your instance needs at least 50 GB of GPU memory to run this project in PyTorch. In my limited experience, PyTorch is much more memory intensive than Tensorflow. The smaller p2.xlarge EC2 instance with 12 GB of GPU memory worked fine for my initial implementation of the project in Keras+Tensorflow. However, this same instance kept encountering 'out of memory' errors when running the project in PyTorch. Once I switched to a p2.8xlarge instance (96 GB GPU memory), the project ran smoothly &mdash; but, keep in mind that this larger instance is much more costly, ~$7/hr vs $1/hr. You can compare the different instance types yourself [here](https://aws.amazon.com/ec2/instance-types/) (the P2 and P3 instances are found under "Accelerated Computing"). Again, if you're running the project on Tensorflow, the smaller p2.xlarge EC2 instance is fine.
+	Your instance needs at least 50 GB of GPU memory to run this project in PyTorch. In my limited experience, PyTorch is much more memory intensive than Tensorflow. The smaller p2.xlarge EC2 instance with 12 GB of GPU memory worked fine for my initial implementation of the project in Keras+Tensorflow. However, this same instance kept encountering 'out of memory' errors when running the project in PyTorch. Once I switched to a p2.8xlarge instance (96 GB GPU memory), the project ran smoothly &mdash; but, keep in mind that this larger instance is much more costly, ~$7/hr vs $1/hr. You can compare the different instance types yourself [here](https://aws.amazon.com/ec2/instance-types/) (the P2 and P3 instances are found under "Accelerated Computing"). Again, if you're running the project on Tensorflow, the smaller p2.xlarge EC2 instance is fine.
 
-	• When setting-up your instance, remember to open port 8888 for Jupyter Notebook in your [security group settings](https://www.evernote.com/l/ABdh1MljZRRFPKBZEsh0XH-oBMd28_J-yfs).
+	When setting-up your instance, remember to open port 8888 for Jupyter Notebook in your [security group settings](https://www.evernote.com/l/ABdh1MljZRRFPKBZEsh0XH-oBMd28_J-yfs).
 
 2. Start your EC2 instance via the console, then login via terminal.
 ```
@@ -68,7 +107,7 @@ ssh -i <path to key> ubuntu@<IPv4 Public IP address>
 ```
 source activate pytorch_p36
 ```
-	Or, if you're using tensorflow, you'd enter `source activate tensorflow_p36`. A complete list of environments is available [here](https://docs.aws.amazon.com/dlami/latest/devguide/tutorial-conda.html#tutorial-conda-login).
+	Or, if you're using tensorflow, you'd enter `source activate tensorflow_p36`. A complete list of Anaconda environments is available [here](https://docs.aws.amazon.com/dlami/latest/devguide/tutorial-conda.html#tutorial-conda-login). Or simply enter `conda info --envs` in your terminal. 
 
 4. Install OpenCV
 ```
