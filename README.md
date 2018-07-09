@@ -19,7 +19,7 @@ This project is inspired by the [Kaggle Dog Breed competition](https://www.kaggl
 
 Here are two sample outputs from the final algorithm:
 
-<img src="writeup/german-shepherd-solo.png" width="50%" align="top" alt=""  title="Sample Output" /><img src="writeup/jim-carey.png" width="50%" align="top" alt="" title="Sample Output" />
+<img src="writeup/german-shepherd-solo.png" width="40%" align="top" alt=""  title="Sample Output" /><img src="writeup/jim-carey.png" width="45%" align="top" alt="" title="Sample Output" />
 
 #### Learning Goals
 
@@ -36,26 +36,31 @@ Outlined below is a summary of the steps and challenges encountered during this 
 - Keras+Tensorflow &mdash; [.ipynb version](dog_app_v6_keras.ipynb), [.html version](https://rawgit.com/tommytracey/aind-dog-project/master/dog_app_v6_keras.html)
 - PyTorch &mdash; [.ipynb version](dog_app_v7_pytorch.ipynb), [.html version](https://rawgit.com/tommytracey/aind-dog-project/master/dog_app_v7_pytorch.html)
 
-### Steps:
-1. Data Pre-processing
-	- Load and Inspect Data
-	- Create Train, Validation, and Test Sets
-	- Augmentation
+### Steps (high-level)
+1. Data Preparation
+	- Load, inspect, and pre-process the data
+	- Create datasets for training, validation, and testing
+	- Augment the training data
 1. Build CNN for recognizing dog breeds
-	- Transfer learning: Load pre-trained model and replace last fully connected layer.
-	- Setup Optimization, Regularization, and Loss Functions
-	- Re-train model
+	- Utilize transfer learning: Load pre-trained model and replace last fully connected layer.
+	- Setup hyperparameters
+	- Setup the optimization, regularization, and loss functions
+	- Train the model on the dog images
 	- Examine results
-		- train, valid, test accuracy
+		- Is the model converging? What are the training and validation accuracies?
 		- Preview model predictions
+		- Tweak, tune, and iterate until predictions and metrics look sound
+		- Run on test image set
 	- Inference
 		- Take a deeper look at model predictions including confidence scores
 1. Incorporate human face detector
-1. Integrate into single algorithm
+	- Choose an existing face detection package and test it
+1. Integrate dog detector and human detector into single algorithm
+	- Test algorithm on set of real-world images
 
 
 ##### &nbsp;
-## Results
+## Implementation & Results
 *coming soon*
 
 
@@ -107,7 +112,8 @@ ssh -i <path to key> ubuntu@<IPv4 Public IP address>
 ```
 source activate pytorch_p36
 ```
-	Or, if you're using tensorflow, you'd enter `source activate tensorflow_p36`. A complete list of Anaconda environments is available [here](https://docs.aws.amazon.com/dlami/latest/devguide/tutorial-conda.html#tutorial-conda-login). Or simply enter `conda info --envs` in your terminal. 
+
+	Or, if you're using tensorflow, you'd enter `source activate tensorflow_p36`. A complete list of Anaconda environments is available [here](https://docs.aws.amazon.com/dlami/latest/devguide/tutorial-conda.html#tutorial-conda-login). Or simply enter `conda info --envs` in your terminal.
 
 4. Install OpenCV
 ```
@@ -136,6 +142,7 @@ unzip lfw.zip
 ```
 jupyter notebook --ip=0.0.0.0 --no-browser
 ```
+
 	Then, to open Jupyter in your browser, start by copying the URL provided in your terminal window. It should look something like this: `http://ip-170-35-87-127:8888/?token=eqith4949181huhfkjqdhfh1948`
 
 	Paste this URL into your browser and replace the `http://ip-170-35-87-127` portion to the left of the colon ":" with the IP address for your EC2 instance.
