@@ -1,14 +1,6 @@
-[//]: # (Image References)
-
-[image1]: ./images/sample_dog_output.png "Sample Output"
-[image2]: ./images/vgg16_model.png "VGG-16 Model Keras Layers"
-[image3]: ./images/vgg16_model_draw.png "VGG16 Model Figure"
-[image4]: ./writeup/german-shepherd-solo.png "VGG16 Model Figure"
-
-
 #### Udacity Artificial Intelligence Nanodegree
 ### Term 2: Project 5
-# Classifying Dog Breeds Using CNNs & PyTorch
+# Classifying Dog Breeds Using CNNs and PyTorch
 
 ##### &nbsp;
 
@@ -18,12 +10,25 @@
 
 
 ##### &nbsp;
-## Goal & Overview
-Welcome to the Convolutional Neural Networks (CNN) project in the AI Nanodegree! In this project, you will learn how to build a pipeline that can be used within a web or mobile app to process real-world, user-supplied images.  Given an image of a dog, your algorithm will identify an estimate of the canine’s breed.  If supplied an image of a human, the code will identify the resembling dog breed.  
+## Overview
+This project is inspired by the [Kaggle Dog Breed competition](https://www.kaggle.com/c/dog-breed-identification). The goal of this project is to build a pipeline that could be used in a web or mobile app to process real-world images. The pipeline must be able to:
 
-<img src="writeup/german-shepherd-solo.png" width="50%" alt=""  title="Sample Output" />
+1. Detect whether an image contains a dog or human, and distinguish between the two.
+1. If given an image of a dog, the model predicts the canine’s breed with at least 60% accuracy. Random chance is only 0.75% since there are 133  dog breeds (classes) in the dataset.
+1. If given an image of a human, the model identifies the dog breeds the person most resembles.
 
-Along with exploring state-of-the-art CNN models for classification, you will make important design decisions about the user experience for your app.  Our goal is that by completing this lab, you understand the challenges involved in piecing together a series of models designed to perform various tasks in a data processing pipeline.  Each model has its strengths and weaknesses, and engineering a real-world application often involves solving many problems without a perfect answer.  Your imperfect solution will nonetheless create a fun user experience!
+Here are two sample outputs from the final algorithm:
+
+<img src="writeup/german-shepherd-solo.png" width="50%" align="top" alt=""  title="Sample Output" /><img src="writeup/jim-carey.png" width="50%" align="top" alt="" title="Sample Output" />
+
+#### Learning Goals
+
+- Explore top performing CNN models for classification, including **VGG, ResNet, InceptionV3, and Xception** network architectures.
+- Implement a subset of these models using **transfer learning**.
+- First implement a pipeline using **Keras+Tensorflow**. Then, as an extra learning challenge, implement a different pipeline in **PyTorch**.
+- Understand the challenges involved in piecing together a series of models designed to perform various tasks in a data processing pipeline.  Each model has its strengths and weaknesses, and engineering a real-world application often involves solving many problems without a perfect answer. Although the solution isn't perfect, it nonetheless creates a fun user experience!
+
+
 
 ##### &nbsp;
 ## Approach
@@ -40,11 +45,11 @@ Along with exploring state-of-the-art CNN models for classification, you will ma
 ---
 
 # Project Starter Code
-In case you want to run this project yourself, below is the project starter code. [This repository](https://github.com/udacity/dog-project) contains all the code needed.
+In case you want to run this project yourself, below is the project starter code.
 
 ##### &nbsp;
 ## Setup Instructions
-These instructions have been modified for running the project on AWS, with specific recommendations for PyTorch. Udacity's original setup instructions can be found [here](https://github.com/udacity/dog-project#project-instructions).
+NOTE: These instructions have been modified for running the project on AWS, with specific recommendations for PyTorch. Udacity's original project code and setup instructions can be found [here](https://github.com/udacity/dog-project#project-instructions).
 
 ##### &nbsp;
 
@@ -63,7 +68,7 @@ ssh -i <path to key> ubuntu@<IPv4 Public IP address>
 ```
 source activate pytorch_p36
 ```
-Or, if you're using tensorflow, you'd enter `source activate tensorflow_p36`. A complete list of environments is available [here](https://docs.aws.amazon.com/dlami/latest/devguide/tutorial-conda.html#tutorial-conda-login).
+	Or, if you're using tensorflow, you'd enter `source activate tensorflow_p36`. A complete list of environments is available [here](https://docs.aws.amazon.com/dlami/latest/devguide/tutorial-conda.html#tutorial-conda-login).
 
 4. Install OpenCV
 ```
