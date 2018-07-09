@@ -61,7 +61,7 @@ Outlined below is a summary of the steps and challenges encountered during this 
 
 ##### &nbsp;
 ## Implementation & Results
-*coming soon*
+*Coming Soon* &mdash; In the meantime, checkout the notebooks. 
 
 
 ##### &nbsp;
@@ -73,11 +73,12 @@ Outlined below is a summary of the steps and challenges encountered during this 
 
 #### PyTorch vs. Keras+Tensorflow
 
-1. PyTorch dataloader
-	- makes creation of class labels seamless
-	- no need for One-hot Encoding
-	- creating augmentations is a snap!
-1. PyTorch strikes a good balance between simplicity and flexibility. PyTorch also feels more like pure Python, whereas Tensorflow has some syntax and conventions that are unique to Tensorflow. "Sessions" anyone? In general, Tensorflow feels more lower level and getting the syntax right can be cumbersome. However, using Keras helps abstract away much of that complexity.
+1. PyTorch dataloader ❤️
+	- Makes creation of class labels seamless
+	- No need for manual one-hot encoding
+		- mapping between OHE vector indexes and their associated classes happens automagically
+	- Creating a custom series of augmentations is a snap!
+1. PyTorch strikes a good balance between simplicity and flexibility. I can see why many researchers prefer it. PyTorch also feels more like pure Python, whereas Tensorflow has some syntax and conventions that are unique to Tensorflow. "Sessions" anyone? In general, Tensorflow feels more lower level and nailing the syntax can be cumbersome. However, using Keras helps abstract away much of that complexity while still providing adequate customizations.
 1. Tensorflow seems much more efficient and production ready.
 	- Static vs. dynamic graph computation
 	- AWS cost differential
