@@ -3,6 +3,7 @@
 [image1]: ./images/sample_dog_output.png "Sample Output"
 [image2]: ./images/vgg16_model.png "VGG-16 Model Keras Layers"
 [image3]: ./images/vgg16_model_draw.png "VGG16 Model Figure"
+[image4]: ./writeup/german-shepherd-solo.png "VGG16 Model Figure"
 
 
 #### Udacity Artificial Intelligence Nanodegree
@@ -11,15 +12,16 @@
 
 ##### &nbsp;
 
-<a href=""><img src="writeup/dog-breeds-header.jpg" width="100%" /></a>
+<img src="writeup/dog-breeds-header.jpg" width="100%" />
 
 *Image credit: [pethelpful.com](https://pethelpful.com/dogs/Tips-on-Choosing-the-Right-Dog-Breed)*
+
 
 ##### &nbsp;
 ## Goal & Overview
 Welcome to the Convolutional Neural Networks (CNN) project in the AI Nanodegree! In this project, you will learn how to build a pipeline that can be used within a web or mobile app to process real-world, user-supplied images.  Given an image of a dog, your algorithm will identify an estimate of the canine’s breed.  If supplied an image of a human, the code will identify the resembling dog breed.  
 
-![Sample Output][image1]
+<img src="writeup/german-shepherd-solo.png" width="50%" alt=""  title="Sample Output" />
 
 Along with exploring state-of-the-art CNN models for classification, you will make important design decisions about the user experience for your app.  Our goal is that by completing this lab, you understand the challenges involved in piecing together a series of models designed to perform various tasks in a data processing pipeline.  Each model has its strengths and weaknesses, and engineering a real-world application often involves solving many problems without a perfect answer.  Your imperfect solution will nonetheless create a fun user experience!
 
