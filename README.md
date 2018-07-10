@@ -103,7 +103,9 @@ NOTE: These instructions have been modified for running the project on AWS, with
 
 ##### &nbsp;
 
-1. Create an Amazon Web Services EC2 instance. I recommend [Deep Learning AMI (Ubuntu) Version 10.0 - ami-e580c79d](https://aws.amazon.com/marketplace/pp/B077GCH38C), which comes with most of the packages you'll need already pre-installed.
+1. Create an Amazon Web Services EC2 instance.
+
+	I recommend [Deep Learning AMI (Ubuntu) Version 10.0 - ami-e580c79d](https://aws.amazon.com/marketplace/pp/B077GCH38C), which comes with most of the packages you'll need already pre-installed.
 
 	Your instance needs at least 50 GB of GPU memory to run this project in PyTorch. In my limited experience, PyTorch is much more memory intensive than Tensorflow. The smaller p2.xlarge EC2 instance with 12 GB of GPU memory worked fine for my initial implementation of the project in Keras+Tensorflow. However, this same instance kept encountering 'out of memory' errors when running the project in PyTorch. Once I switched to a p2.8xlarge instance (96 GB GPU memory), the project ran smoothly &mdash; but, keep in mind that this larger instance is much more costly, ~$7/hr vs $1/hr. You can compare the different instance types yourself [here](https://aws.amazon.com/ec2/instance-types/) (the P2 and P3 instances are found under "Accelerated Computing"). Again, if you're running the project on Tensorflow, the smaller p2.xlarge EC2 instance is fine.
 
