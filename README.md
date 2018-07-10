@@ -32,8 +32,7 @@ Here are two sample outputs from the final algorithm:
 ## Approach
 Outlined below is a summary of the steps and challenges encountered during this project. However, a more detailed walk-through along with the source code is available via the iPython notebooks.
 
-[//]: # (TODO - create html version for Keras)
-- Data exploration &mdash; [.ipynb version](dog-breed-data-exploration.ipynb), [.html version](https://rawgit.com/tommytracey/aind-dog-project/master/dog-breed-data-exploration.ipynb)
+- Data exploration &mdash; [.ipynb version](dog-breed-data-exploration.ipynb), [.html version](https://rawgit.com/tommytracey/aind-dog-project/master/dog-breed-data-exploration.html)
 - Keras+Tensorflow implementation &mdash; [.ipynb version](dog_app_v6_keras.ipynb), [.html version](https://rawgit.com/tommytracey/aind-dog-project/master/dog_app_v6_keras.html)
 - PyTorch implementation &mdash; [.ipynb version](dog_app_v7_pytorch.ipynb), [.html version](https://rawgit.com/tommytracey/aind-dog-project/master/dog_app_v7_pytorch.html)
 
@@ -67,7 +66,7 @@ Outlined below is a summary of the steps and challenges encountered during this 
 
 ##### &nbsp;
 ## Reflections
-#### Improving Accuracy
+### Improving Accuracy
 - **Additional training on the more difficult breeds.**
 	- Create a new training set with a distribution based on prediction accuracy &mdash; i.e., poor performing breeds have more training images, while higher performing breeds have fewer images.
 - **Deeper architecture + Augmentation**
@@ -75,7 +74,7 @@ Outlined below is a summary of the steps and challenges encountered during this 
 - **Train longer.**
 	- In my PyTorch version, it seems I may have left some additional convergence on the table. My training accuracy was still quite low, probably due to all the augmentations. Perhaps given more training time this could have translated to marginally higher validation and test accuracies.
 
-#### PyTorch vs. Keras+Tensorflow
+### PyTorch vs. Keras+Tensorflow
 
 1. PyTorch dataloader ❤️
 	- Makes creation of class labels seamless
