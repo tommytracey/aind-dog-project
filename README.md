@@ -83,9 +83,12 @@ Outlined below is a summary of the steps and challenges encountered during this 
 	- Creating a custom series of augmentations is a snap!
 1. PyTorch strikes a good balance between simplicity and flexibility. I can see why many researchers prefer it. PyTorch also feels more like pure Python, whereas Tensorflow has some syntax and conventions that are unique to Tensorflow. "Sessions" anyone? In general, Tensorflow feels more lower level and nailing the syntax can be cumbersome. However, using Keras helps abstract away much of that complexity while still providing adequate customizations.
 1. Tensorflow seems much more efficient and production ready.
-	- Cost. The efficiencies of Tensorflow's static graph computation make much cheaper to run on AWS. Training the Tensorflow model was 1/10 the cost of my PyTorch model. But the trade-off of this efficiency is flexibility. For model exploration, you can iterate faster given the convenience of PyTorch's dynamic computational graph.
-	- Tensorflow has a larger and more established support community. That said, I was able to find all of the PyTorch resources I needed; it often just took more digging.
-1. PyTorch seems much easier to debug. The dynamic computational graph results in cleaner and more specific stack traces. Also, the syntax is simpler.  
+	- Support. Tensorflow has a larger and more established support community. That said, I was able to find all of the PyTorch resources I needed; it often just took more digging.
+	- Cost. The efficiencies of Tensorflow's static graph computation make much cheaper to run on AWS. Training the Tensorflow model was 1/10 the cost of my PyTorch model.
+1. PyTorch is more flexible
+	- The trade-off for Tensorflow's efficiency is less flexibility. For ML exploration and overall modularity, PyTorch's dynamic computational graph provides a lot more flexibility. Tensorflow feels a bit monolithic by comparison.
+1. PyTorch seems much easier to debug.
+	- The dynamic computational graph results in cleaner and more specific stack traces. Also, the syntax is simpler.  
 
 
 ##### &nbsp;
