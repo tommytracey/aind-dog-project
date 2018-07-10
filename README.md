@@ -110,47 +110,53 @@ NOTE: These instructions have been modified for running the project on AWS, with
 	When setting-up your instance, remember to open port 8888 for Jupyter Notebook in your [security group settings](https://www.evernote.com/l/ABdh1MljZRRFPKBZEsh0XH-oBMd28_J-yfs).
 
 2. Start your EC2 instance via the console, then login via terminal.
-```
-ssh -i <path to key> ubuntu@<IPv4 Public IP address>
-```
+
+	```
+	ssh -i <path to key> ubuntu@<IPv4 Public IP address>
+	```
 
 3. Activate your PyTorch environment for Python 3.6.
-```
-source activate pytorch_p36
-```
 
-Or, if you're using tensorflow, you'd enter `source activate tensorflow_p36`. A complete list of Anaconda environments is available [here](https://docs.aws.amazon.com/dlami/latest/devguide/tutorial-conda.html#tutorial-conda-login). Or simply enter `conda info --envs` in your terminal.
+	```
+	source activate pytorch_p36
+	```
+
+	Or, if you're using tensorflow, you'd enter `source activate tensorflow_p36`. A complete list of Anaconda environments is available [here](https://docs.aws.amazon.com/dlami/latest/devguide/tutorial-conda.html#tutorial-conda-login). Or simply enter `conda info --envs` in your terminal.
 
 4. Install OpenCV
-```
-conda install -c conda-forge opencv
-```
+
+	```
+	conda install -c conda-forge opencv
+	```
 
 5. Clone the repository and navigate to the downloaded folder.
-```
-git clone https://github.com/udacity/dog-project.git
-cd dog-project
-```
+
+	```
+	git clone https://github.com/udacity/dog-project.git
+	cd dog-project
+	```
 
 6. Download the [dog dataset](https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/dogImages.zip). Then unzip the folder. Make sure it's located at `path/to/dog-project/dogImages`. If you are using a Windows machine, you may want to use [7zip](http://www.7-zip.org/) to extract the folder.
-```
-wget https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/dogImages.zip
-unzip dogImages.zip
-```
 
-7. Download the [human dataset](https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/lfw.zip).  Unzip the folder, makig sure it's at location `path/to/dog-project/lfw`.  
-```
-wget https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/lfw.zip
-unzip lfw.zip
-```
+	```
+	wget https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/dogImages.zip
+	unzip dogImages.zip
+	```
+
+7. Download the [human dataset](https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/lfw.zip).  Unzip the folder, making sure it's at location `path/to/dog-project/lfw`.  
+
+	```
+	wget https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/lfw.zip
+	unzip lfw.zip
+	```
 
 8. Open Jupyter Notebook via your AWS terminal.
 	```
 	jupyter notebook --ip=0.0.0.0 --no-browser
 	```
 
-Then, to open Jupyter in your browser, start by copying the URL provided in your terminal window. It should look something like this: `http://ip-170-35-87-127:8888/?token=eqith4949181huhfkjqdhfh1948`
+	Then, to open Jupyter in your browser, start by copying the URL provided in your terminal window. It should look something like this: `http://ip-170-35-87-127:8888/?token=eqith4949181huhfkjqdhfh1948`
 
-Paste this URL into your browser and replace the `http://ip-170-35-87-127` portion to the left of the colon ":" with the IP address for your EC2 instance.
+	Paste this URL into your browser and replace the `http://ip-170-35-87-127` portion to the left of the colon ":" with the IP address for your EC2 instance.
 
 9. Before running code, verify that the kernel matches your Conda environment. If you need to change the kernel, go to the drop-down menu (Kernel > Change kernel). Then, you can start running code cells in the notebook.
